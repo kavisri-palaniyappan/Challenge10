@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHALLENGE10</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const game={
+        team1:'Bayern Munich',
+        team2:'Borrussia dortmud',
+        players:[
+            [
+            'Neuer',
+            'Pavard',
+            'Martinez',
+            'Alaba',
+            'Davies',
+            'Kimmichi',
+            'Goretzka',
+            'coman',
+            'Muller',
+            'Gnarby',
+            'Lewandowski',
+        ],
+        [
+            'Burki',
+            'Schulz',
+            'Hummels',
+            'Akanji',
+            'Hakimi',
+            'weigl',
+            'Witsel',
+            'Hazard',
+            'Brandt',
+            'Sancho',
+            'Gotze',  
+
+        ],
+    ], 
+    score:'4:0',
+    scored:['Lewandowski','Gnarby','Lewandowski','Hummels'],
+    date: 'Nov 9th 2037',
+    odds : {
+        team1:1.33,
+        X:3.25,
+        team2:6.5,
+    },
+};
+//1.
+const [players1,players2]=game.players;
+console.log(players1,players2);
+//2.
+const[gk,...fieldplayers]=players1;
+console.log(gk,fieldplayers);
+//3.
+const allplayers=[...players1,...players2];
+console.log(allplayers);
+//4.
+const players1Final=[...players1,'Thiago','Coutinho','Periscic'];
+//5
+const{
+    odds:{ team1, X:draw,team2},
+}=game;
+console.log(team1,draw,team2);
+//6
+const printGoals=function(...players){
+    console.log(players);
+    console.log(`${players.length}goals were scored`);
+};
+// printGoals('Davies','Muller','Lewandowski','kimmichi');
+// printGoals('Davies','Muller');
+printGoals(...game.scored);
+//7.
+team1<team2 &&console.log('team 1 is more likely to win');
+team1>team2&&console.log('team 2 is more likely to win');
+</script>
+</html>
